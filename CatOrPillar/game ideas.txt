@@ -1,0 +1,2 @@
+Gameplay:
+A random string of cats is queued up and the player must arrange them in the best order possible in order to solve the level. A certain amount of time passes and then another random string of cats is queued up. The variety of cats increases with difficulty of levels.
