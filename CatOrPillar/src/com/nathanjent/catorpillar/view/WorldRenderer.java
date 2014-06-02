@@ -25,6 +25,7 @@ public class WorldRenderer {
 	private World world;
 	private OrthographicCamera cam;
 	
+		
 	/** for debug rendering **/
 	ShapeRenderer debugRenderer = new ShapeRenderer();
 	

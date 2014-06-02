@@ -31,8 +31,8 @@ public class WorldController {
 	private boolean jumpingPressed;
 	private boolean grounded = false;
 	
-	// This is the rectangle pool used in collision detection
-	// Good to avoid instantiation each frame
+//	 This is the rectangle pool used in collision detection
+//	 Good to avoid instantiation each frame
 	private Pool<Rectangle> rectPool = new Pool<Rectangle>() {
 		@Override
 		protected Rectangle newObject() {
@@ -82,7 +82,7 @@ public class WorldController {
 
 	public void jumpReleased() {
 		keys.get(keys.put(Keys.JUMP, false));
-		jumpingPressed = false;
+//		jumpingPressed = false;
 	}
 	public void fireReleased() {
 		
@@ -93,26 +93,26 @@ public class WorldController {
 		processInput();
 		
 		// If grounded then reset the state to IDLE 
-		if (grounded && !character.getState().equals(State.JUMPING)) {
-			character.setState(State.IDLE);
-		}
-
-		character.getAcceleration().y = GRAVITY;
-		character.getAcceleration().mul(delta);
-		character.getVelocity().add(character.getAcceleration().x, character.getAcceleration().y);
-		
-		// checking collisions with the surrounding blocks depending on character's velocity
-		checkCollisionWithBlocks(delta);
-
-		// apply damping to halt character nicely 
-		character.getVelocity().x *= DAMP;
-		
-		if (character.getVelocity().x > MAX_VEL) {
-			character.getVelocity().x = MAX_VEL;
-		}
-		if (character.getVelocity().x < -MAX_VEL) {
-			character.getVelocity().x = -MAX_VEL;
-		}
+//		if (grounded && !character.getState().equals(State.JUMPING)) {
+//			character.setState(State.IDLE);
+//		}
+//
+//		character.getAcceleration().y = GRAVITY;
+//		character.getAcceleration().mul(delta);
+//		character.getVelocity().add(character.getAcceleration().x, character.getAcceleration().y);
+//		
+//		// checking collisions with the surrounding blocks depending on character's velocity
+//		checkCollisionWithBlocks(delta);
+//
+//		// apply damping to halt character nicely 
+//		character.getVelocity().x *= DAMP;
+//		
+//		if (character.getVelocity().x > MAX_VEL) {
+//			character.getVelocity().x = MAX_VEL;
+//		}
+//		if (character.getVelocity().x < -MAX_VEL) {
+//			character.getVelocity().x = -MAX_VEL;
+//		}
 
 		character.update(delta);
 	}
@@ -231,25 +231,23 @@ public class WorldController {
 		if (keys.get(Keys.LEFT)) {
 			// left is pressed
 			character.setFacingLeft(true);
-			if (!character.getState().equals(State.JUMPING)) {
-				character.setState(State.WALKING);
-			}
-			character.getAcceleration().x = -ACCELERATION;
-		} else if (keys.get(Keys.RIGHT)) {
-			// left is pressed
-			character.setFacingLeft(false);
-			if (!character.getState().equals(State.JUMPING)) {
-				character.setState(State.WALKING);
-			}
-			character.getAcceleration().x = ACCELERATION;
-		} else {
-			if (!character.getState().equals(State.JUMPING)) {
-				character.setState(State.IDLE);
-			}
-			character.getAcceleration().x = 0;
-
+			character.setState(State.WALKING);
+			character.getVelocity().x = -Character.SPEED;
 		}
-		return false;
+		if (keys.get(Keys.RIGHT)) {
+			// right is pressed
+			character.setFacingLeft(false);
+			character.setState(State.WALKING);
+			character.getVelocity().x = Character.SPEED;
+		} 
+		if ((keys.get(Keys.LEFT) && keys.get(Keys.RIGHT)) ||
+				(!keys.get(Keys.LEFT) && !(keys.get(Keys.RIGHT)))) {
+			character.setState(State.IDLE);
+			// acceleration is 0 on the x
+			character.getAcceleration().x = 0;
+			// horizontal speed is 0
+			character.getVelocity().x = 0;
+		}
+		return grounded;
 	}
-
 }

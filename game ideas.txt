@@ -1,0 +1,5 @@
+Gameplay:
+CatOrPillar segments are queued up by the player from a list of lettered segments. By spelling words
+the player arranges the segments in the best order possible to solve the level. Segments are chosen 
+from a selection of letters A certain amount of time passes and then another random string of 
+CatOrPillar segments is queued up. The variety of cats increases with difficulty of levels or length of time.

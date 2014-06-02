@@ -5,64 +5,99 @@ filter: Nearest,Nearest
 repeat: none
 catOrPillar001
   rotate: false
-  xy: 1, 261
+  xy: 1, 327
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 catOrPillar002
   rotate: false
-  xy: 1, 131
+  xy: 1, 197
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 catOrPillar003
   rotate: false
-  xy: 131, 261
+  xy: 131, 327
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 catOrPillar004
   rotate: false
-  xy: 1, 1
+  xy: 1, 67
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 catOrPillar005
   rotate: false
-  xy: 131, 131
+  xy: 131, 197
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 catOrPillar006
   rotate: false
-  xy: 261, 261
+  xy: 261, 327
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 fall
   rotate: false
-  xy: 131, 1
+  xy: 131, 67
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 jump
   rotate: false
-  xy: 261, 131
+  xy: 261, 197
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 worldBlock
   rotate: false
-  xy: 261, 1
+  xy: 261, 67
   size: 128, 128
   orig: 128, 128
+  offset: 0, 0
+  index: -1
+catParts-head
+  rotate: false
+  xy: 1, 1
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+catParts-hind
+  rotate: false
+  xy: 391, 391
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+catParts-mid
+  rotate: false
+  xy: 35, 1
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+catParts-tail
+  rotate: false
+  xy: 391, 325
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1
+catParts-torso
+  rotate: false
+  xy: 425, 391
+  size: 32, 64
+  orig: 32, 64
   offset: 0, 0
   index: -1

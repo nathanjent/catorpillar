@@ -1,0 +1,19 @@
+Launchers (android, desktop, html)
+	Game
+		Model
+			Character
+			Position
+		View
+			AbstractScreen
+			SplashScreen
+			MenuScreen
+			OptionScreen
+			WorldScreen
+				HUD
+				Level
+					Atlas
+					TextureRegions
+			
+		Control
+			Input
+
